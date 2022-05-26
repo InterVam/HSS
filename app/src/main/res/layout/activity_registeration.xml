@@ -8,7 +8,7 @@
     tools:context=".RegisterationActivity">
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/regusername"
+
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
@@ -28,6 +28,7 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
+            android:id="@+id/regusername"
             android:textSize="15sp"
             android:textAlignment="center"
             android:textColor="@color/white"
@@ -37,7 +38,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/regpassword"
+
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
@@ -62,13 +63,14 @@
             android:textSize="15sp"
             android:textAlignment="center"
             android:inputType="textPassword"
+            android:id="@+id/regpassword"
             android:textColor="@color/white"
             android:fontFamily="@font/poppins_black"
             android:layout_height="wrap_content" />
 
     </com.google.android.material.textfield.TextInputLayout>
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/regaccountname"
+
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
@@ -90,9 +92,57 @@
             android:layout_width="match_parent"
             android:textSize="15sp"
             android:textAlignment="center"
+            android:id="@+id/regaccountname"
             android:textColor="@color/white"
             android:fontFamily="@font/poppins_black"
             android:layout_height="wrap_content" />
 
     </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:hint="System ID"
+
+        app:hintTextColor="@color/white"
+        app:boxStrokeWidth="2dp"
+        android:layout_marginBottom="-100dp"
+        app:boxStrokeColor="#000000"
+        android:enabled="true"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:textSize="15sp"
+            android:id="@+id/regsystemid"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:fontFamily="@font/poppins_black"
+            android:layout_height="wrap_content" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/RegisterButton"
+        android:layout_width="250dp"
+        android:layout_height="75dp"
+        android:layout_marginBottom="176dp"
+        android:backgroundTint="@color/white"
+        android:fontFamily="@font/poppins_black"
+        android:text="@string/register"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        app:cornerRadius="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
 </androidx.constraintlayout.widget.ConstraintLayout>
