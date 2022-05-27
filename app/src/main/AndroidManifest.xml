@@ -7,11 +7,23 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/_03c0300_e5c8_4f2c_8bdc_ff7eac4b7f27"
         android:label="The Observer"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/_03c0300_e5c8_4f2c_8bdc_ff7eac4b7f27"
         android:supportsRtl="true"
         android:theme="@style/Theme.HSS">
+        <activity
+            android:name=".Splash"
+            android:exported="true">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>
+        <activity
+            android:name=".Pictures"
+            android:exported="false" />
         <activity
             android:name=".Profile"
             android:exported="false" />
@@ -26,12 +38,8 @@
             android:exported="false" />
         <activity
             android:name=".WelcomePage"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            android:exported="false">
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
 
         <meta-data

@@ -47,12 +47,12 @@ class MainPage : AppCompatActivity() {
         }
 
         var id = 0
-        val humandetectedref = FirebaseDatabase.getInstance().getReference("Control").child("-N03tDv1MvVoC7OG1mir").child("cvflag")
+        val humandetectedref = FirebaseDatabase.getInstance().getReference("Control").child("-N03tDv1MvVoC7OG1mir").child("alarm")
         createNotificationChannel()
         val humanListener = object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
-                val post = dataSnapshot.getValue<Int>()
-                if (post == 1){
+                val post = dataSnapshot.getValue<String>()
+                if (post == "yes"){
                 id += 1
                 NotificationManagerCompat.from(applicationContext).notify(id,builder.build())}
             }
