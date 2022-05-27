@@ -11,6 +11,8 @@ import android.view.ViewGroup
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import android.widget.Button
+import android.widget.Switch
+import com.google.android.material.switchmaterial.SwitchMaterial
 import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.fragment_camera.view.*
 
@@ -49,6 +51,7 @@ class Camera : Fragment() {
         val UPButt: Button = viewOfLayout.findViewById(R.id.UP)
         val DownButt: Button =viewOfLayout.findViewById(R.id.DOWN)
         val ResetButt: Button =viewOfLayout.findViewById(R.id.reset)
+        val viewswitch =viewOfLayout.findViewById<SwitchMaterial>(R.id.viewswitch)
         myWebView.webViewClient = object : WebViewClient(){
             @Deprecated("Deprecated in Java")
             override fun shouldOverrideUrlLoading(
@@ -63,11 +66,31 @@ class Camera : Fragment() {
         }
         myWebView.loadUrl("https://asinine-chipmunk-2344.dataplicity.io/?action=stream")
         myWebView.setInitialScale(1)
-        myWebView.settings.javaScriptEnabled=true
-        myWebView.settings.allowContentAccess=true
-        myWebView.settings.domStorageEnabled=true
-        myWebView.settings.loadWithOverviewMode=true
-        myWebView.settings.useWideViewPort=true
+        myWebView.settings.javaScriptEnabled = true
+        myWebView.settings.allowContentAccess = true
+        myWebView.settings.domStorageEnabled = true
+        myWebView.settings.loadWithOverviewMode = true
+        myWebView.settings.useWideViewPort = true
+        viewswitch.setOnCheckedChangeListener { compoundButton, b ->
+
+            if (b) {
+            myWebView.loadUrl("https://asinine-chipmunk-2344.dataplicity.io/?action=stream")
+            myWebView.setInitialScale(1)
+            myWebView.settings.javaScriptEnabled = true
+            myWebView.settings.allowContentAccess = true
+            myWebView.settings.domStorageEnabled = true
+            myWebView.settings.loadWithOverviewMode = true
+            myWebView.settings.useWideViewPort = true
+        }
+        else if(!b){
+            myWebView.loadUrl("https://google.com")
+            myWebView.setInitialScale(1)
+            myWebView.settings.javaScriptEnabled = true
+            myWebView.settings.allowContentAccess = true
+            myWebView.settings.domStorageEnabled = true
+            myWebView.settings.loadWithOverviewMode = true
+            myWebView.settings.useWideViewPort = true
+        } }
 
         ResetButt.setOnClickListener { resetback() }
 

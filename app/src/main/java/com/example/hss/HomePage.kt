@@ -2,13 +2,13 @@ package com.example.hss
 
 import android.annotation.SuppressLint
 import android.content.ContentValues.TAG
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
+import androidx.fragment.app.Fragment
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
@@ -131,7 +131,10 @@ class HomePage : Fragment() {
             FirebaseDatabase.getInstance().getReference("Control").child("-N03tDv1MvVoC7OG1mir").child("arm").setValue(0)
         }
 
-
+        viewOfLayout.profile_image.setOnClickListener {
+            val intent = Intent(activity, Profile::class.java)
+            startActivity(intent)
+        }
         return viewOfLayout
 
     }
